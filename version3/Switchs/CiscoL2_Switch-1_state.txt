@@ -1,0 +1,27 @@
+vIOS-L2-01#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi0/0, Gi0/1, Gi0/2, Gi1/0
+                                                Gi1/1
+100  VLAN100                          active    Gi1/2
+200  VLAN0200                         active
+300  VLAN0300                         active
+1002 fddi-default                     act/unsup
+1003 trcrf-default                    act/unsup
+1004 fddinet-default                  act/unsup
+1005 trbrf-default                    act/unsup
+
+
+
+
+vIOS-L2-01#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     unassigned      YES unset  up                    up
+GigabitEthernet0/1     unassigned      YES unset  up                    up
+GigabitEthernet0/2     unassigned      YES unset  down                  down
+GigabitEthernet0/3     unassigned      YES manual down                  down
+GigabitEthernet1/0     unassigned      YES unset  down                  down
+GigabitEthernet1/1     unassigned      YES unset  down                  down
+GigabitEthernet1/2     unassigned      YES unset  down                  down
+Vlan100                192.168.1.35    YES manual up                    up
