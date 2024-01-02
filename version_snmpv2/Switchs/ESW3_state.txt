@@ -1,0 +1,74 @@
+ESW3#show vlan-switch
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/0, Fa0/1, Fa0/2, Fa0/3
+                                                Fa0/5, Fa0/9, Fa0/10, Fa0/11
+                                                Fa0/12, Fa0/13, Fa0/14, Fa0/15
+                                                Fa1/0, Fa1/1, Fa1/2, Fa1/3
+                                                Fa1/4, Fa1/5, Fa1/6, Fa1/7
+                                                Fa1/8, Fa1/9, Fa1/10, Fa1/11
+                                                Fa1/12, Fa1/13, Fa1/14, Fa1/15
+10   VLAN0010                         active
+20   VLAN0020                         active
+30   VLAN0030                         active
+1002 fddi-default                     active
+1003 token-ring-default               active
+1004 fddinet-default                  active
+1005 trnet-default                    active
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        1002   1003
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+30   enet  100030     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        1      1003
+1003 tr    101003     1500  1005   0      -        -    srb      1      1002
+1004 fdnet 101004     1500  -      -      1        ibm  -        0      0
+1005 trnet 101005     1500  -      -      1        ibm  -
+
+
+
+ESW3# show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down
+FastEthernet0/1            unassigned      YES unset  administratively down down
+FastEthernet0/2            unassigned      YES unset  up                    down
+FastEthernet0/3            unassigned      YES unset  up                    up
+FastEthernet0/4            unassigned      YES unset  up                    up
+FastEthernet0/5            unassigned      YES unset  up                    down
+FastEthernet0/6            unassigned      YES unset  up                    up
+FastEthernet0/7            192.168.4.2     YES NVRAM  up                    up
+FastEthernet0/8            unassigned      YES manual up                    down
+FastEthernet0/9            unassigned      YES unset  up                    down
+FastEthernet0/10           unassigned      YES unset  up                    down
+FastEthernet0/11           unassigned      YES unset  up                    down
+FastEthernet0/12           unassigned      YES unset  up                    down
+FastEthernet0/13           unassigned      YES unset  up                    down
+FastEthernet0/14           unassigned      YES unset  up                    down
+FastEthernet0/15           unassigned      YES unset  up                    down
+FastEthernet1/0            unassigned      YES unset  up                    down
+FastEthernet1/1            unassigned      YES unset  up                    down
+FastEthernet1/2            unassigned      YES unset  up                    down
+FastEthernet1/3            unassigned      YES unset  up                    down
+FastEthernet1/4            unassigned      YES unset  up                    down
+FastEthernet1/5            unassigned      YES unset  up                    down
+FastEthernet1/6            unassigned      YES unset  up                    down
+FastEthernet1/7            unassigned      YES unset  up                    down
+FastEthernet1/8            unassigned      YES unset  up                    down
+FastEthernet1/9            unassigned      YES unset  up                    down
+FastEthernet1/10           unassigned      YES unset  up                    down
+FastEthernet1/11           unassigned      YES unset  up                    down
+FastEthernet1/12           unassigned      YES unset  up                    down
+FastEthernet1/13           unassigned      YES unset  up                    down
+FastEthernet1/14           unassigned      YES unset  up                    down
+FastEthernet1/15           unassigned      YES unset  up                    down
+Vlan1                      unassigned      YES NVRAM  up                    up
+Vlan10                     192.168.10.1    YES manual up                    up
+Vlan20                     192.168.5.1     YES manual up                    up
+Vlan29                     unassigned      YES unset  up                    down
+Vlan30                     unassigned      YES NVRAM  up                    up
